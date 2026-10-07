@@ -17,7 +17,7 @@ int main() {
 	string background = "images1/backgrounds/winter.png";
 	string foreground = "images1/characters/yoda.png";
 
-	//this block sets the background texture. If the file doesnt load it tells us that with the cout
+	//this block sets the background image. If the file doesnt load it tells us that with the cout
 	Texture backgroundTex;
 	if (!backgroundTex.loadFromFile(background)) {
 		cout << "Couldn't Load Image" << endl;
@@ -31,12 +31,13 @@ int main() {
 		exit(1);
 	}
 
-	//This block initializes the backgroundImage then sets it equal to the texture
+	//This block initializes the backgroundImage then sets it equal to the already established image
 	Image backgroundImage;
 	backgroundImage = backgroundTex.copyToImage();
 
 	//this block does the same as the last one but with the foreground
 	Image foregroundImage;
+	//fills the image with the data from the texture we established earlier
 	foregroundImage = foregroundTex.copyToImage();
 
 	//this sets the variable sz (presumed to mean size) to the size of the background image
@@ -77,6 +78,8 @@ int main() {
 * 
 * What I need to do now is figure out the color of the greenscreen pixels and tell the nested loops
 * to delete the pixel if it's that color. I swear I've done this lab before at some point- its uncanny.
+* 
+* Next, I looked through the first image processing lecture on brightspace
 * 
 * */
 
