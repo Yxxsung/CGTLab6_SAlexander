@@ -46,7 +46,8 @@ int main() {
 	for (int y = 0; y < sz.y; y++) {
 		for (int x = 0; x < sz.x; x++) {
 
-			// You can access the current pixel at x,y like so: Color example = foregroundImage.getPixel(x, y);
+			// You can access the current pixel at x,y like so: 
+				Color example = foregroundImage.getPixel(x, y);
 			// Color objects store the individual channel values like example.r example.g and example.b
 		}
 	}
@@ -66,7 +67,16 @@ int main() {
 
 /*  Troubleshooting Notes:
 * 
-* the first run after writing all the comments resulted in a failure to load error for file
+* the first run after writing all the comments resulted in a failure to load error for 
+* file images1/backgrounds/winter.png. I think this may be resolved by putting all of the
+* images in a folder called images1. Lets try that.
+* 
+* That did fix the issue. Now we get Yoda with a green background.I tried taking the example code
+* inside the nested loops "Color example = foregroundImage.getPixel(x, y);" and uncommenting it.
+* This did not change the output.
+* 
+* What I need to do now is figure out the color of the greenscreen pixels and tell the nested loops
+* to delete the pixel if it's that color. I swear I've done this lab before at some point- its uncanny.
 * 
 * */
 
