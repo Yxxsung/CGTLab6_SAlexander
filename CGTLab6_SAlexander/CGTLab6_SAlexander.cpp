@@ -43,6 +43,9 @@ int main() {
 	//this sets the variable sz (presumed to mean size) to the size of the background image
 	Vector2u sz = backgroundImage.getSize();
 
+	// Assume that the top left corner of the foreground is green screen.
+	Color greenScreen = foregroundImage.getPixel(0, 0);
+
 	//these nested loops will run the code for each individual pixel in the background image
 	for (int y = 0; y < sz.y; y++) {
 		for (int x = 0; x < sz.x; x++) {
@@ -50,8 +53,12 @@ int main() {
 			// You can get the color of the current pixel at x,y like so: 
 				Color Current = foregroundImage.getPixel(x, y);
 			// Color objects store the individual channel values like example.r example.g and example.b
-			if (Current = ) {
-				Color None(0, 0, 0);
+
+			//this block should take any pixel that is green screen and erase it
+			if (Current == greenScreen) {
+				
+				foregroundImage.setPixel(x, y);
+				backgroundImage.getPixel(x, y);
 
 			}
 
@@ -85,7 +92,10 @@ int main() {
 * What I need to do now is figure out the color of the greenscreen pixels and tell the nested loops
 * to delete the pixel if it's that color. I swear I've done this lab before at some point- its uncanny.
 * 
-* Next, I looked through the first image processing lecture on brightspace
+* Next, I looked through the first image processing lecture on brightspace to try and figure out next
+* steps. I established a line that identifies the pixel color for green screen and made an if loop inside
+* the nested if loop so that as it runs through each pixel, it checks if it is green screen. Now I just
+* need to figure out how to make it delete it once it has identified it.
 * 
 * */
 
