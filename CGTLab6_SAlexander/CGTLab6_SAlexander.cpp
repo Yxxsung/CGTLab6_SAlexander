@@ -47,10 +47,16 @@ int main() {
 	for (int y = 0; y < sz.y; y++) {
 		for (int x = 0; x < sz.x; x++) {
 
-			// You can access the current pixel at x,y like so: 
-				Color example = foregroundImage.getPixel(x, y);
+			// You can get the color of the current pixel at x,y like so: 
+				Color Current = foregroundImage.getPixel(x, y);
 			// Color objects store the individual channel values like example.r example.g and example.b
+			if (Current = ) {
+				Color None(0, 0, 0);
+
+			}
+
 		}
+
 	}
 
 
